@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Split Smart — Expense Splitter</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="splashScreen">
+    <img id="splashIcon" src="rupeesLogo.png" alt="Loading" />
+    <h1 class="splashText">Split Smart</h1>
+  </div>
+
+  <header class="hero fade-in">
+    <div class="hero-left">
+      <img id="heroImage" src="rupeesLogo.png" alt="money" />
+    </div>
+    <div class="hero-right">
+      <h1 id="appTitle">Split Smart 💸</h1>
+      <p id="appSubtitle">Exactly who paid whom — fast, clear & beautiful</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="left-panel card">
+      <h2>Trip & Participants</h2>
+      <label>
+        Trip name
+        <input id="tripName" placeholder="e.g., Goa Trip" />
+      </label>
+
+      <div class="add-name-row">
+        <input id="participantName" placeholder="Add participant name" />
+        <button id="addParticipantBtn">Add</button>
+      </div>
+
+      <div id="participantsList" class="participants-list"></div>
+
+      <div class="hint small">Tip: Add all people first, then add transactions.</div>
+    </section>
+
+    <section class="middle-panel card">
+      <h2>Add Transaction</h2>
+
+      <div id="noParticipantsAlert" class="alert hidden">Add at least one participant first.</div>
+
+      <div id="contributorsBlock" class="contributors-block">
+        <h3>
+          Contributors (who paid)
+          <span class="small hint">(multiple allowed)</span>
+        </h3>
+
+        <div id="contributorsList"></div>
+
+        <div class="contrib-row">
+          <select id="contribSelect"></select>
+          <input id="contribAmount" placeholder="amount" inputmode="numeric" />
+          <button id="addContribBtn" class="addContribBtn">Add contributor</button>
+        </div>
+      </div>
+
+      <hr />
+
+      <h3>Paid for (select people)</h3>
+      <div id="paidForList" class="paidfor-list"></div>
+
+      <label>
+        Note
+        <input id="txNote" placeholder="Optional note (where/what)" />
+      </label>
+
+      <div class="tx-actions">
+        <button id="saveTransactionBtn" class="primary">Save Transaction</button>
+        <button id="resetTransactionBtn" class="ghost">Reset</button>
+      </div>
+    </section>
+
+    <section class="right-panel card">
+      <h2>Transactions & Results</h2>
+      <div id="transactionsList" class="transactions-list"></div>
+
+      <div class="results-controls">
+        <button class="toggleBtn" data-mode="detailed">Detailed</button>
+        <button class="toggleBtn" data-mode="normal">Normal (mutual cancel)</button>
+        <button class="toggleBtn" data-mode="advanced">Advance (final settlement)</button>
+      </div>
+
+      <div id="resultsArea" class="results-area"></div>
+
+      <div class="small hint">
+        Click an entry to see the transaction notes and contributors.
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-brand">
+      <img src="rupeesLogo.png" alt="Split Smart" class="footer-logo" />
+      <span>Made with ❤️ — Split Smart</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
